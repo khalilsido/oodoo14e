@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+
+<!-- Inherit Form View of HR contract  -->
+<record id="inherit_hr_contract_hr_contract_view_form" model="ir.ui.view">
+    <field name="name">inherit.hr.contract.hr.contract.view.form</field>
+    <field name="model">hr.contract</field>
+    <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+    <field name="arch" type="xml">
+<notebook>
+        <page string="Allowance Information" name="Employee Allowances">
+            <sheet>
+                <group>
+            <group>
+            <field name="phone_allow"/>
+            <field name="house_allow"/>
+            <field name="food_allow"/>
+            </group>
+             <group>
+            <field name="tran_allow"/>
+            <field name="other_allow"/>
+            </group>
+                </group>
+            </sheet>
+        </page>
+        </notebook>
+    </field>
+</record>
+
+
+
+      <!-- Inherit Form View of hr.employee -->
+      <record id="inherit_hr_view_employee_form_2" model="ir.ui.view">
+          <field name="name">inherit.hr.view.employee.form.2</field>
+          <field name="model">hr.employee</field>
+          <field name="inherit_id" ref="hr.view_employee_form"/>
+          <field name="arch" type="xml">
+
+              <xpath expr="//field[@name='country_of_birth']" position="after">
+                  <field name="bank_name"/>
+                  <field name="bank_iban"/>
+                  <field name="med_name"/>
+                  <field name="med_class"/>
+                  <field name="gosi_no"/>
+              </xpath>
+
+          </field>
+      </record>
+  </data>
+</odoo>
