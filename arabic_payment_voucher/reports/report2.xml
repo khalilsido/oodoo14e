@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report
+            id="report_arabic_payment_voucher_2"
+            string="Payment Voucher سند صرف"
+            model="account.payment"
+            report_type="qweb-pdf"
+            name="arabic_payment_voucher.payment_Voucher_2"
+            file="arabic_payment_voucher.payment_Voucher_2"/>
+
+</odoo>

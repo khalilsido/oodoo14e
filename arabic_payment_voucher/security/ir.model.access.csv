@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_arabic_payment_voucher_arabic_payment_voucher,arabic_payment_voucher.arabic_payment_voucher,model_arabic_payment_voucher_arabic_payment_voucher,,1,0,0,0

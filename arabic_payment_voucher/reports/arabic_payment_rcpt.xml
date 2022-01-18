@@ -1,0 +1,93 @@
+<odoo>
+
+<template id="payment_Receipt">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+			 <t t-call="web.external_layout">
+            <br/>
+            <br/>
+            <div>
+                <center>   <h3> Payment Receipt - سند قبض </h3>
+                            <H3> No. <t t-esc="doc.name"/> رقم  </H3>
+                </center>
+            </div>
+
+
+            	<div class="main">
+							<table width="100%">
+								<tr>
+									<td style="color:red;float:left;text-align:left;width:45%;"></td>
+									<td style="color:red;text-align:center;width:10%;"> </td>
+									<td style="color:red;float:right;text-align:right;width:45%;"></td>
+								</tr>
+							</table>
+							<div class="row" style="margin-top:10px;">
+								<div style="float:left;text-align:left;width:50%;">
+									<strong>Amount  </strong>
+									<t t-esc="docs.amount" t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"/>
+								</div>
+								<div style="float:right;text-align:right;width:50%;">
+									<strong>   مبلغ وقدره</strong>
+									<t t-esc="docs.amount"/>
+								</div>
+							</div>
+							<div class="row" style="margin-top:10px;">
+								<div style="float:left;text-align:left;width:50%;">
+									<strong>Date   </strong>
+									<t t-esc="docs.date"/>
+								</div>
+								<div style="float:right;text-align:right;width:50%;">
+									<strong>   التاريخ</strong>
+									<t t-esc="docs.date"/>
+                                </div>
+                                <br/>
+                                <br/>
+							</div>
+							<table width="100%" style="margin-top:10px;font-size:16px;">
+								<tbody>
+									<tr>
+										<td width="20%" height="20px" style="font-size: 16px;border: 1px solid;padding-left:8px;text-align:left;">Beneficiary Name :</td>
+										<td width="60%" height="20px" colspan="2" style="text-align:center;            padding-left:10px;border: 1px solid;"><t t-esc="docs.partner_id.name"/><hr style="margin:0px;margin-right:10px;"/></td>
+										<td width="20%" height="20px" style="padding-right:10px;font-size: 16px;border: 1px solid;text-align:right;">: أسم المستفيد</td>
+									</tr>
+									<tr>
+										<td width="20%" height="20px" style="font-size: 16px;border: 1px solid;padding-left:10px;text-align:left;">Amount :</td>
+										<td width="60%" height="20px" colspan="2" style="text-align:center;            padding-left:10px;border: 1px solid;">
+											<span>
+												<t t-esc="docs.amount"/>
+											</span>
+											<span>
+<!--												<t t-esc="docs.action_num_to_arabic(docs.amount)"/>-->
+											</span>
+											<hr style="           margin:0px;margin-right:10px;"/></td>
+										<td width="20%" height="20px" style="font-size: 16px;border: 1px solid;padding-right:10px;text-align:right;">: مبلغ وقدره</td>
+									</tr>
+									<tr>
+										<td width="20%" height="20px" style="font-size: 16px;border: 1px solid;padding-left:10px;text-align:left;">For :</td>
+										<td width="60%" height="20px" colspan="2" style="text-align:center;            padding-left:10px;border: 1px solid;"> <t t-esc="doc.ref"/>  <hr style="margin:0px;margin-right:10px;"/></td>
+										<td width="20%" height="20px" style="padding-right:10px;font-size: 16px;border: 1px solid;text-align:right;">: وذلك عن</td>
+									</tr>
+									<tr>
+										<td width="20%" style="padding-left:10px;font-size: 16px;border: 1px solid;">Payment  :</td>
+										<td width="30%" style="padding-left:10px;border: 1px solid;"><t t-esc="docs.journal_id.name"/></td>
+										<td width="30%" style="padding-right:10px;border: 1px solid;text-align:right;"><t t-esc="docs.journal_id.name"/></td>
+										<td width="20%" style="border: 1px solid;padding-right:10px;text-align:right;">: الدفع</td>
+									</tr>
+											<tr>
+										<td width="20%" style="padding-left:10px;font-size: 16px;border: 1px solid;"> Signature  :</td>
+										<td width="30%" style="padding-right:10px;border: 1px solid;text-align:center;"> </td>
+										<td width="30%" style="padding-right:10px;border: 1px solid;text-align:center;"> </td>
+										<td width="20%" style="border: 1px solid;padding-right:10px;text-align:right;">: التوقيع </td>
+									</tr>
+								</tbody>
+							</table>
+                </div>
+            <div class="footer">
+
+            </div>
+			 </t>
+        </t>
+    </t>
+</template>
+
+</odoo>
